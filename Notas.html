@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evaluación de nota</title>
+</head>
+<body>
+  <form onsubmit="evaluarNota(); return false;">
+    <section>
+      <label for="notaAlumno"><strong>Nota del alumno:</strong></label><br>
+      <input type="number" id="notaAlumno" min="0" max="20" required>
+      <input type="submit" value="Evaluar">
+    </section>
+  </form>
+
+  <section>
+    <h2>Resultado:</h2>
+    <span id="mensaje"></span>
+  </section>
+
+  <script>
+    function evaluarNota() {
+      const nota = parseFloat(document.getElementById("notaAlumno").value);
+      const mensaje = document.getElementById("mensaje");
+
+      if (nota >= 11) {
+        mensaje.textContent = "Aprobado";
+      } else {
+        mensaje.textContent = "Desaprobado";
+      }
+    }
+  </script>
+</body>
+</html> 
